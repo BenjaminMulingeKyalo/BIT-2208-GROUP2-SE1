@@ -1,0 +1,36 @@
+<TuckshopApp>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        BoxLayout:
+            size_hint_y: None
+            height: 60
+            spacing: 10
+            padding: 10
+            Image:
+                source: 'logo.png'
+                size_hint_x: None
+                width: 50
+            Label:
+                text: 'Maelezo Tuckshop'
+                font_size: '24sp'
+                bold: True
+
+        ScrollView:
+            GridLayout:
+                id: content
+                cols: 1
+                spacing: 10
+                size_hint_y: None
+                padding: 10
+                height: self.minimum_height
+
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+            padding: 10
+            Button:
+                text: 'Refresh'
+                on_press: app.refresh_items(content)
